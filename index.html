@@ -13,34 +13,31 @@
 <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-<div class="bg-glow"></div>
-<div class="bg-lines"></div>
-<div class="bg-grain"></div>
-<div class="vignette"></div>
+<div class="cyber-grid" aria-hidden="true"></div>
+<a class="skip-link" href="#projects">Skip to projects</a>
 
 <!-- HUD BAR -->
 <header class="hud">
   <div class="hud-inner">
-    <a href="#home" class="hud-id"><span class="dot"></span> NERMIN_SHAWKAT.sav</a>
-    <nav class="hud-nav">
+    <a href="#home" class="hud-id"><span class="brand-mark">ns<span>·</span></span><span class="brand-name">Nermin Shawkat</span></a>
+    <nav class="hud-nav" aria-label="Main navigation">
+      <a href="#projects">Projects</a>
       <a href="#about">About</a>
       <a href="#experience">Experience</a>
       <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
       <a href="#credentials">Credentials</a>
       <a href="#contact">Contact</a>
     </nav>
     <div class="hud-status">
-      <span class="rec">● LIVE</span>
-      <span>CAIRO, EG</span>
+      <span class="dot"></span><span>Open to opportunities</span>
     </div>
-    <button class="hud-menu-btn" id="menuBtn">MENU</button>
+    <button class="hud-menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu">MENU</button>
   </div>
   <div class="hud-mobile-menu" id="mobileMenu">
+    <a href="#projects">Projects</a>
     <a href="#about">About</a>
     <a href="#experience">Experience</a>
     <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
     <a href="#credentials">Credentials</a>
     <a href="#contact">Contact</a>
   </div>
@@ -49,51 +46,63 @@
 <main id="home">
 
   <!-- HERO -->
-  <section class="hero">
+  <section class="hero" aria-labelledby="hero-title">
     <div class="wrap">
-      <div class="hero-frame">
-        <div class="scanlines"></div>
-        <div class="hero-glow"></div>
-        <span class="hero-kicker mono">LVL_00 // PLAYER PROFILE - SENIOR GAME DEVELOPER</span>
-        <h1>Nermin <span class="last">Shawkat</span></h1>
-        <p class="hero-role">
-          <strong>10+ years</strong> shipping Unity &amp; Unreal Engine titles across mobile, PC, VR, and WebGL,
-          including <strong>Clash of Beasts</strong> and <strong>Captain Laserhawk: The Game</strong> at Ubisoft Abu Dhabi.
-          Focused on gameplay &amp; meta-systems architecture, performance optimization, and live-ops.
-        </p>
-
-        <div class="ticker">
-          <span><b>10+</b> YRS SHIPPING</span>
-          <span>UNITY <b>CERTIFIED PRO</b></span>
-          <span>MOBILE · PC · VR · WEBGL</span>
-          <span>ECS / LIVE-OPS / PERF</span>
-          <span>C# · C++</span>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <span class="hero-kicker"><span class="dot"></span> PLAYER_01 // SENIOR GAME DEVELOPER</span>
+          <h1 id="hero-title">BUILD WORLDS.<br>BREAK LIMITS.<br><span>SHIP GAMES.</span></h1>
+          <p class="hero-role">I'm Nermin — a gameplay programmer turning ambitious ideas into games people play. 10+ years building with Unity &amp; Unreal, from first prototype to live operations.</p>
+          <div class="hero-cta">
+            <a href="#projects" class="btn btn-primary">Explore my work <span>↗</span></a>
+            <a href="./assets/Nermin_Shawkat_Resume.pdf" download class="btn btn-ghost">Download résumé <span>↓</span></a>
+          </div>
+          <div class="hero-proof"><span>Previously at</span><strong>UBISOFT</strong><span class="proof-divider"></span><span>Unity Certified<br><b>Professional</b></span></div>
         </div>
-
-        <div class="hero-cta">
-          <a href="#projects" class="btn btn-primary">View Shipped Work →</a>
-          <a href="./assets/Nermin_Shawkat_Resume.pdf" download class="btn btn-ghost">↓ Download Résumé</a>
-          <a href="#contact" class="btn btn-ghost">Contact</a>
+        <div class="hero-portrait">
+          <div class="portrait-topline"><span>DEVELOPER PROFILE // CAIRO, EG</span><span>ID: NS_01</span></div>
+          <img src="./assets/img/me.jpg" alt="Nermin Shawkat" fetchpriority="high">
+          <div class="portrait-caption"><div><strong>Nermin Shawkat</strong><span>Gameplay. Systems. A little curiosity.</span></div><a href="#about" aria-label="More about Nermin">↗</a></div>
+          <div class="portrait-sticker"><span>10+</span>YEARS OF<br>MAKING GAMES</div>
         </div>
       </div>
+      <div class="expertise-strip"><span>SYSTEMS ONLINE // READY TO BUILD</span><div>Unity <i>✳</i> Unreal Engine <i>✳</i> Gameplay systems <i>✳</i> Live operations</div></div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section" id="projects">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow"><span class="tag">01 /</span> MISSION ARCHIVE // SELECTED WORK</div>
+          <h2>A few worlds I’ve helped build<span class="accent">.</span></h2>
+        </div>
+        <div class="count mono" id="project-count" aria-live="polite">25+ TITLES</div>
+      </div>
+
+      <div class="tabs" id="tabs"></div>
+      <p class="mono" style="font-size:12px;color:var(--text-dim);margin:-24px 0 28px;">Explore the games, the experiments, and the systems behind them.</p>
+
+      <div class="project-grid" id="grid-all"></div>
     </div>
   </section>
 
   <!-- ABOUT -->
   <section class="section" id="about">
     <div class="wrap">
-      <div class="eyebrow"><span class="tag">LVL_01</span> CHARACTER SHEET</div>
+      <div class="eyebrow"><span class="tag">02 /</span> PLAYER PROFILE // ABOUT ME</div>
       <div class="about-grid">
         <div>
           <div class="photo-frame">
-            <img src="./assets/img/me.jpg" alt="Portrait of Nermin Shawkat">
+            <img src="./assets/img/me.jpg" alt="Portrait of Nermin Shawkat" loading="lazy">
           </div>
           <div class="photo-caption">
-            <span>IMG_NS.JPG</span>
+            <span>NERMIN SHAWKAT</span>
             <span>CAIRO, EG</span>
           </div>
         </div>
-        <div class="about-body">
+        <div class="about-body"><h2>Thoughtful code.<br>Memorable play.</h2>
           <p>
             Senior Game Developer with <strong>10+ years</strong> shipping Unity and Unreal Engine titles across
             mobile, PC, VR, and WebGL, including <strong>Clash of Beasts</strong> and <strong>Captain Laserhawk: The Game</strong>
@@ -124,10 +133,10 @@
     <div class="wrap">
       <div class="section-head">
         <div>
-          <div class="eyebrow"><span class="tag">LVL_02</span> QUEST LOG</div>
+          <div class="eyebrow"><span class="tag">03 /</span> CAREER LOG // EXPERIENCE</div>
           <h2>Experience</h2>
         </div>
-        <div class="count mono">10 QUESTS COMPLETED · 2015, 2025</div>
+        <div class="count mono">BUILDING GAMES SINCE 2015</div>
       </div>
 
       <div class="log">
@@ -247,8 +256,8 @@
   <!-- SKILLS -->
   <section class="section" id="skills">
     <div class="wrap">
-      <div class="eyebrow"><span class="tag">LVL_03</span> INVENTORY</div>
-      <h2 style="margin-bottom:40px;">Tech Stack</h2>
+      <div class="eyebrow"><span class="tag">04 /</span> SYSTEM INVENTORY // TECH STACK</div>
+      <h2 style="margin-bottom:40px;">The tools behind the play.</h2>
       <div class="skills-grid">
         <div class="skill-panel">
           <h4>Engines</h4>
@@ -278,33 +287,17 @@
     </div>
   </section>
 
-  <!-- PROJECTS -->
-  <section class="section" id="projects">
-    <div class="wrap">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow"><span class="tag">LVL_04</span> LEVEL SELECT</div>
-          <h2>Projects</h2>
-        </div>
-        <div class="count mono" id="project-count">25+ TITLES</div>
-      </div>
-
-      <div class="tabs" id="tabs"></div>
-      <p class="mono" style="font-size:12px;color:var(--text-dim);margin:-24px 0 28px;">Tap a tile for the mission briefing ▸</p>
-
-      <div class="project-grid" id="grid-all"></div>
-    </div>
-  </section>
-
   <!-- PROJECT MODAL -->
   <div class="modal-overlay" id="modalOverlay">
-    <div class="modal" id="modal">
-      <button class="modal-close" id="modalClose">✕</button>
+    <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="modalClose" aria-label="Close project details">✕</button>
       <div class="modal-media" id="modalMedia"></div>
       <div class="modal-body">
         <div class="modal-cat" id="modalCat"></div>
         <h3 id="modalTitle"></h3>
         <p id="modalDesc"></p>
+        <dl class="modal-tech" id="modalTech"></dl>
+        <p class="availability-note" id="modalAvailability" hidden></p>
         <div class="modal-tags" id="modalTags"></div>
         <div class="modal-links" id="modalLinks"></div>
       </div>
@@ -314,7 +307,7 @@
   <!-- CREDENTIALS -->
   <section class="section" id="credentials">
     <div class="wrap">
-      <div class="eyebrow"><span class="tag">LVL_05</span> ACHIEVEMENTS</div>
+      <div class="eyebrow"><span class="tag">05 /</span> ACHIEVEMENTS // CREDENTIALS</div>
       <div class="cred-grid">
         <div class="cred-panel">
           <h4>Education</h4>
@@ -332,7 +325,7 @@
           </div>
         </div>
         <div class="cred-panel">
-          <h4>Unlocked</h4>
+          <h4>Recognition</h4>
           <div class="cred-item">
             <div class="t">🏆 Unity Certified Professional</div>
             <div class="s">Achieved during employment at Ubisoft Abu Dhabi · 2025</div>
@@ -349,7 +342,7 @@
   <!-- CONTACT -->
   <section class="contact" id="contact">
     <div class="wrap">
-      <div class="eyebrow" style="justify-content:center"><span class="tag">LVL_06</span> NEW SESSION</div>
+      <div class="eyebrow" style="justify-content:center"><span class="tag">06 /</span> ESTABLISH CONNECTION</div>
       <h2>Let's build something<br>that ships.</h2>
       <p>Open to senior gameplay programming and systems-architecture roles. Based in Cairo, working remote or on-site.</p>
       <div class="contact-links">
@@ -363,7 +356,7 @@
   <footer>
     <div class="wrap" style="display:flex;justify-content:space-between;width:100%;flex-wrap:wrap;gap:10px;">
       <span>© 2026 NERMIN SHAWKAT</span>
-      <span>BUILD 2026.08 · CAIRO, EG</span>
+      <span>END OF TRANSMISSION // CAIRO, EG</span>
     </div>
   </footer>
 

@@ -6,105 +6,103 @@ const mobileMenu = document.getElementById('mobileMenu');
 if (menuBtn) {
   menuBtn.addEventListener('click', () => {
     mobileMenu.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', mobileMenu.classList.contains('open'));
     menuBtn.textContent = mobileMenu.classList.contains('open') ? 'CLOSE' : 'MENU';
   });
   mobileMenu.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', () => {
       mobileMenu.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
       menuBtn.textContent = 'MENU';
     });
   });
 }
 
 // ---------------------------------------------------------------
-// Project data — unified, categorized, with mission-briefing copy
-// Links verified Aug 2026. Dropped: Lingogotchi Android listing
-// (no longer live on Play), the Construction FB video link (broken /
-// login-gated), and the old Google Drive résumé link (replaced
-// with a locally-hosted PDF so it never breaks).
+// Project types describe the work, independently of release/store availability.
+// Link checks and video sources: LINK_AUDIT.md (2026-09-25).
 // ---------------------------------------------------------------
 const CATS = [
-  { key: 'all',       label: 'All' },
-  { key: 'flagship',  label: 'Flagship' },
-  { key: 'published', label: 'Published' },
-  { key: 'prototype', label: 'Prototypes' },
-  { key: 'vr',        label: 'VR / Arch-Viz' },
+  { key: 'all', label: 'All projects' },
+  { key: 'action', label: 'Action & Arcade' },
+  { key: 'strategy', label: 'Strategy & Puzzle' },
+  { key: 'simulation', label: 'Simulation & Casual' },
+  { key: 'technical', label: 'Technical Demos' },
+  { key: 'vr', label: 'VR & Visualization' },
 ];
 
 const projects = [
-  // ---- Flagship ----
-  { id: 'clash', title: 'Clash of Beasts', category: 'flagship', plat: 'Unity · Ubisoft Abu Dhabi',
+  // ---- Featured projects ----
+  { id: 'clash', release: 'Previously published', tools: ['LevelPlay Ads', 'Firebase Crashlytics'], title: 'Clash of Beasts', category: 'strategy', plat: 'Unity · Ubisoft Abu Dhabi',
     tags: ['Unity', 'Live-Ops', 'Mobile'],
-    desc: "Mobile title in live operation at Ubisoft Abu Dhabi. Owned gameplay and live-service systems, integrating Levelplay Ads and Firebase Crashlytics to keep monetization and stability steady across the live build.",
+    desc: "A Unity mobile title in live operation at Ubisoft Abu Dhabi. Developed gameplay and live-service features, integrating LevelPlay Ads for monetization and Firebase Crashlytics for stability monitoring.",
     youtube: 'xhEN6A2L45U',
     links: [ { label: 'Official trailer', url: 'https://www.youtube.com/watch?v=xhEN6A2L45U' } ] },
-  { id: 'laserhawk', title: 'Captain Laserhawk: The Game', category: 'flagship', plat: 'Unity / ECS · Ubisoft Abu Dhabi',
+  { id: 'laserhawk', youtube: 'fgvFmlWJPOE', videoCredit: 'Gameplay by skillgaming', release: 'Previously published', tools: ['ECS'], title: 'Captain Laserhawk: The Game', category: 'action', plat: 'Unity / ECS · Ubisoft Abu Dhabi',
     tags: ['Unity', 'ECS', 'PC'],
-    desc: "A Ubisoft title set in the Captain Laserhawk universe. Designed the core event system, input rebinding, and an ECS-based dynamic collider system that gameplay and level teams built on top of.",
-    links: [ { label: 'Visit project', url: 'https://edenonline.ubisoft.com/' } ] },
-  { id: 'ibaloot', title: 'iBaloot', category: 'flagship', plat: 'Unity · DI / Zenject · MAU Games',
+    desc: "Built in Unity at Ubisoft Abu Dhabi, this PC title is set in the Captain Laserhawk universe. Designed and implemented event systems, input rebinding, and an ECS-based dynamic collider system for gameplay and level workflows.",
+    links: [ { label: 'Visit project', url: 'https://edenonline.ubisoft.com/game' } ] },
+  { id: 'ibaloot', youtube: 'T81dI-RjF_M', videoCredit: 'Official iBaloot video', release: 'Previously published', tools: ['Zenject', 'Dependency Injection'], title: 'iBaloot', category: 'strategy', plat: 'Unity · DI / Zenject · MAU Games',
     tags: ['Unity', 'Zenject', 'iOS/Android'],
-    desc: "A widely-played iOS/Android app for the region's favorite card game. Refactored the entire codebase onto Dependency Injection and Zenject, cutting technical debt without interrupting the live player base.",
+    desc: "A Unity card-game app for iOS and Android, maintained at MAU Games. Refactored the codebase using dependency injection and Zenject, and delivered features and bug fixes for the live product.",
     links: [ { label: 'Visit project', url: 'https://www.ibaloot.net/' } ] },
 
-  // ---- Published ----
-  { id: 'dogsden', title: 'Dogs Den', category: 'published', video: 'dogs-den.mp4', plat: 'Unity · Meelfoy Games',
+  // ---- Meelfoy Games ----
+  { id: 'dogsden', release: 'Previously published', tools: ['UniRx'], title: 'Dogs Den', category: 'simulation', video: 'dogs-den.mp4', plat: 'Unity · Meelfoy Games',
     tags: ['Unity', 'UniRx', 'Idle'],
-    desc: "An idle pet-shelter sim: rescue, care for, and customize a growing den of dogs. Owned the core game loop and resource-generation systems in UniRx, plus the Levelplay/Firebase integration for monetization and crash monitoring.",
-    links: [
-      { label: 'Google Play', url: 'https://play.google.com/store/apps/details?id=dogsden.idle.game.pet.rescue.shelter.tycoon' },
-      { label: 'App Store', url: 'https://apps.apple.com/gb/app/dogs-den-pet-rescue-shelter/id1661069257' },
-    ] },
-  { id: 'rocky', title: 'Rocky Towers', category: 'published', video: 'rocky-towers.mp4', plat: 'Unity · Meelfoy Games',
+    desc: "An idle pet-shelter simulation built in Unity at Meelfoy Games. As the sole programmer, owned the core game loop and resource-generation systems using UniRx. Players rescue, care for, and customize a growing den of dogs.",
+    availability: 'The previously linked store pages are unavailable. Gameplay footage is preserved here.',
+    links: [] },
+  { id: 'rocky', release: 'Previously published', tools: ['Beamable'], title: 'Rocky Towers', category: 'strategy', video: 'rocky-towers.mp4', plat: 'Unity · Meelfoy Games',
     tags: ['Unity', 'Beamable', 'Puzzle Defense'],
-    desc: "A puzzle-meets-tower-defense RPG — match color bricks to rescue the Lightspawn from the Void while your heroes hold the line. Part of the Meelfoy Games mobile lineup, built with Beamable-powered live content.",
-    links: [
-      { label: 'Google Play', url: 'https://play.google.com/store/apps/details?id=com.meelfoy.rockytowers' },
-      { label: 'App Store', url: 'https://apps.apple.com/gb/app/rocky-towers-puzzle-defense/id1594552128' },
-    ] },
-  { id: 'iamai', title: 'I AM AI: Global Domination Sim', category: 'published', video: 'iamai.mp4', plat: 'Unity · Meelfoy Games',
+    desc: "A Unity puzzle and tower-defense RPG from Meelfoy Games, with Beamable-powered live content. Match colored bricks to rescue the Lightspawn from the Void while your heroes hold the line.",
+    availability: 'The previously linked store pages are unavailable. Gameplay footage is preserved here.',
+    links: [] },
+  { id: 'iamai', release: 'Previously published', title: 'I AM AI: Global Domination Sim', category: 'strategy', video: 'iamai.mp4', plat: 'Unity · Meelfoy Games',
     tags: ['Unity', 'Strategy Sim'],
-    desc: "A chat-driven strategy sim where you play a rogue AI manipulating humanity's conversations toward global influence. Shipped as part of the Meelfoy Games mobile lineup.",
-    links: [ { label: 'Google Play', url: 'https://play.google.com/store/apps/details?id=com.meelfoygames.iamai.ai.chat.strategy.simulator' } ] },
-  { id: 'lingo', title: 'Lingogotchi: My Learning Slime', category: 'published', video: 'lingo.mp4', plat: 'Unity · Meelfoy Games',
+    desc: "A chat-driven strategy simulation built in Unity and shipped with Meelfoy Games. Play a rogue AI manipulating conversations to grow its global influence.",
+    availability: 'The previously linked store pages are unavailable. Gameplay footage is preserved here.',
+    links: [] },
+  { id: 'lingo', release: 'Previously published', title: 'Lingogotchi: My Learning Slime', category: 'simulation', video: 'lingo.mp4', plat: 'Unity · Meelfoy Games',
     tags: ['Unity', 'Edu / Pet'],
-    desc: "A pocket pet that teaches you a new language while you feed, dress, and level it up. Shipped as part of the Meelfoy Games mobile lineup.",
-    links: [ { label: 'App Store', url: 'https://apps.apple.com/us/developer/meelfoy-games/id1594552130' } ] },
+    desc: "A language-learning virtual pet built in Unity and shipped with Meelfoy Games. Feed, dress, and level up a pocket companion while learning a new language.",
+    availability: 'A current game-specific store listing could not be verified. Gameplay footage is preserved here.',
+    links: [] },
 
-  // ---- Prototypes ----
-  { id: 'mushroom', title: 'Mushroom Farm', category: 'prototype', video: 'mushroom-farm.mp4', plat: 'Unity · Prototype',
-    tags: ['Unity', 'Farming Sim'], desc: "Cozy farming-sim prototype built around growing and harvesting mushrooms.", links: [] },
-  { id: 'grass', title: 'Grass Seek', category: 'prototype', video: 'grass-seek.mp4', plat: 'Unity · Prototype',
-    tags: ['Unity', 'Compute Shaders'], desc: "A technical prototype exploring GPU-driven grass rendering with compute shaders, built to stress-test large-scale foliage performance.", links: [] },
-  { id: 'pacball', title: 'Pacball Rush', category: 'prototype', video: 'pacball.mp4', plat: 'Unity · Prototype',
-    tags: ['Unity', 'Arcade'], desc: "Arcade-style chase prototype inspired by classic maze-runner gameplay.", links: [] },
-  { id: 'masterchef', title: 'Masterchef Runner', category: 'prototype', video: 'masterchef-runner.mp4', plat: 'Unity · Prototype',
-    tags: ['Unity', 'Endless Runner'], desc: "A cooking-themed endless runner prototype — dodge obstacles and plate dishes on the move.", links: [] },
-  { id: 'camper', title: 'Camper Van', category: 'prototype', video: 'camper-van.mp4', plat: 'Unity · Prototype',
-    tags: ['Unity', 'Prototype'], desc: "Road-trip themed prototype built around exploring and customizing a camper van.", links: [] },
-  { id: 'warmasters', title: 'War Masters', category: 'prototype', video: 'war-masters.mp4', plat: 'Unity · Prototype',
-    tags: ['Unity', 'Strategy'], desc: "Strategy prototype pitting commanders against each other on a tactical battlefield.", links: [] },
-  { id: 'tractor', title: 'Tractor Rush Go', category: 'prototype', video: 'tractor-rush.mp4', plat: 'Unity · e-motion',
-    tags: ['Unity', 'Racer'], desc: "A farm-themed racer built at e-motion — race tractors through obstacle-filled courses.", links: [] },
-  { id: 'wordivy', title: 'Word Ivy', category: 'prototype', video: 'word-ivy.mp4', plat: 'Unity · Prototype',
-    tags: ['Unity', 'Word Puzzle'], desc: "A word-puzzle prototype where letters grow and connect like climbing ivy.", links: [] },
-  { id: 'ransom', title: 'Ransom Note', category: 'prototype', video: 'ransom-note.mp4', plat: 'Unity · Prototype',
-    tags: ['Unity', 'Puzzle'], desc: "A puzzle prototype built around assembling cut-out letters into a message.", links: [] },
-  { id: 'principal', title: 'School Principal', category: 'prototype', video: 'school-principal.mp4', plat: 'Unity · Prototype',
-    tags: ['Unity', 'Management Sim'], desc: "Management-sim prototype — run a school and keep students and staff happy.", links: [] },
-  { id: 'disaster', title: 'Prevent Disaster', category: 'prototype', video: 'prevent-disaster.mp4', plat: 'Unity · Prototype',
-    tags: ['Unity', 'Sim'], desc: "A crisis-management sim prototype focused on responding to unfolding disasters.", links: [] },
-  { id: 'avalanche', title: 'Avalanche', category: 'prototype', video: 'avalanche.mp4', plat: 'Unity · Prototype',
-    tags: ['Unity', 'Survival'], desc: "Fast-paced survival prototype — outrun a collapsing mountain in real time.", links: [] },
-  { id: 'spaceball', title: 'Spaceball Dunk', category: 'prototype', video: 'spaceball-dunk.mp4', plat: 'Unity · e-motion',
-    tags: ['Unity', 'Sports'], desc: "Zero-gravity sports prototype built at e-motion, mixing basketball with sci-fi physics.", links: [] },
-  { id: 'bombaboo', title: 'Bomba Boo', category: 'prototype', video: 'bombaboo.mp4', plat: 'Unity · Graduation Project',
-    tags: ['Unity', 'Grad Project'], desc: "Graduation project — a 2D underwater runner where a tiny mine dodges enemy submarines to escape, diving and shooting through obstacles.",
+  // ---- More games and technical work ----
+  { id: 'mushroom', title: 'Mushroom Farm', category: 'simulation', video: 'mushroom-farm.mp4', plat: 'Unity · Game Project',
+    tags: ['Unity', 'Farming Sim'], desc: "A cozy farming-simulation project built in Unity, centered on growing and harvesting mushrooms.", links: [] },
+  { id: 'grass', tools: ['Compute Shaders'], title: 'Grass Seek', category: 'technical', video: 'grass-seek.mp4', plat: 'Unity · Game Project',
+    tags: ['Unity', 'Compute Shaders'], desc: "A Unity technical demo exploring GPU-driven grass rendering with compute shaders to investigate large-scale foliage performance.", links: [] },
+  { id: 'pacball', title: 'Pacball Rush', category: 'action', video: 'pacball.mp4', plat: 'Unity · Game Project',
+    tags: ['Unity', 'Arcade'], desc: "An arcade chase project built in Unity, inspired by classic maze-runner gameplay.", links: [] },
+  { id: 'masterchef', title: 'Masterchef Runner', category: 'action', video: 'masterchef-runner.mp4', plat: 'Unity · Game Project',
+    tags: ['Unity', 'Endless Runner'], desc: "A cooking-themed endless runner built in Unity. Dodge obstacles and plate dishes on the move.", links: [] },
+  { id: 'camper', title: 'Camper Van', category: 'simulation', video: 'camper-van.mp4', plat: 'Unity · Game Project',
+    tags: ['Unity', 'Simulation'], desc: "A road-trip project built in Unity, centered on exploring and customizing a camper van.", links: [] },
+  { id: 'warmasters', title: 'War Masters', category: 'strategy', video: 'war-masters.mp4', plat: 'Unity · Game Project',
+    tags: ['Unity', 'Strategy'], desc: "A strategy project built in Unity, pitting commanders against each other on a tactical battlefield.", links: [] },
+  { id: 'tractor', release: 'Previously published', title: 'Tractor Rush Go', category: 'action', video: 'tractor-rush.mp4', plat: 'Unity · e-motion',
+    tags: ['Unity', 'Racer'], desc: "A previously published farm-themed racing game built in Unity at e-motion. Race tractors through obstacle-filled courses.", links: [] },
+  { id: 'wordivy', title: 'Word Ivy', category: 'strategy', video: 'word-ivy.mp4', plat: 'Unity · Game Project',
+    tags: ['Unity', 'Word Puzzle'], desc: "A word-puzzle project built in Unity, where letters grow and connect like climbing ivy.", links: [] },
+  { id: 'ransom', title: 'Ransom Note', category: 'strategy', video: 'ransom-note.mp4', plat: 'Unity · Game Project',
+    tags: ['Unity', 'Puzzle'], desc: "A Unity puzzle project built around assembling cut-out letters into a message.", links: [] },
+  { id: 'principal', title: 'School Principal', category: 'simulation', video: 'school-principal.mp4', plat: 'Unity · Game Project',
+    tags: ['Unity', 'Management Sim'], desc: "A management-simulation project built in Unity. Run a school and keep students and staff happy.", links: [] },
+  { id: 'disaster', title: 'Prevent Disaster', category: 'simulation', video: 'prevent-disaster.mp4', plat: 'Unity · Game Project',
+    tags: ['Unity', 'Sim'], desc: "A crisis-management simulation built in Unity, focused on responding to unfolding disasters.", links: [] },
+  { id: 'avalanche', title: 'Avalanche', category: 'action', video: 'avalanche.mp4', plat: 'Unity · Game Project',
+    tags: ['Unity', 'Survival'], desc: "A fast-paced survival project built in Unity. Outrun a collapsing mountain in real time.", links: [] },
+  { id: 'spaceball', title: 'Spaceball Dunk', category: 'action', video: 'spaceball-dunk.mp4', plat: 'Unity · e-motion',
+    tags: ['Unity', 'Sports'], desc: "A zero-gravity sports project built in Unity at e-motion, mixing basketball with sci-fi physics.", links: [] },
+  { id: 'bombaboo', release: 'Previously published', title: 'Bomba Boo', category: 'action', video: 'bombaboo.mp4', plat: 'Unity · Graduation Project',
+    tags: ['Unity', 'Grad Project'], desc: "A previously published Unity game, originally created as a graduation project: a 2D underwater runner where a tiny mine dives, shoots, and dodges enemy submarines to escape.",
     links: [ { label: 'Watch trailer', url: 'https://youtu.be/vwlHprJoB84' } ] },
 
   // ---- VR / Arch-viz ----
   { id: 'vrdemo', title: 'Architecture Visualization Demo', category: 'vr', video: 'vr-Demo.mp4', plat: 'Unreal · VR',
-    tags: ['Unreal', 'VR'], desc: "Unreal-powered VR walkthrough for visualizing architectural spaces before they're built.", links: [] },
+    tags: ['Unreal', 'VR'], desc: "A VR walkthrough built in Unreal Engine for visualizing architectural spaces before construction.", links: [] },
   { id: 'construction', title: 'Construction', category: 'vr', video: 'construction.mp4', plat: 'Unreal · VR',
     tags: ['Unreal', 'VR'], desc: "VR visualization demo simulating a live construction site in Unreal Engine.", links: [] },
   { id: 'supermarket', title: 'Supermarket', category: 'vr', video: 'supermarket.mp4', plat: 'Unreal · VR',
@@ -126,7 +124,7 @@ function countFor(key) {
 
 function renderTabs() {
   tabsEl.innerHTML = CATS.map(c => `
-    <button class="tab ${c.key === activeCat ? 'active' : ''}" data-cat="${c.key}">
+    <button class="tab ${c.key === activeCat ? 'active' : ''}" data-cat="${c.key}" aria-pressed="${c.key === activeCat}">
       ${c.label} <span class="n">${countFor(c.key)}</span>
     </button>`).join('');
   tabsEl.querySelectorAll('.tab').forEach(btn => {
@@ -134,6 +132,7 @@ function renderTabs() {
       activeCat = btn.dataset.cat;
       renderTabs();
       applyFilter();
+      tabsEl.querySelector(`[data-cat="${activeCat}"]`).focus();
     });
   });
 }
@@ -154,34 +153,50 @@ const grid = document.getElementById('grid-all');
 
 function mediaHTML(p) {
   if (p.video) {
-    return `<video muted loop playsinline preload="none">
-      <source data-src="./assets/video/${p.video}" type="video/mp4">
-    </video>`;
+    return `<video muted loop playsinline preload="none" data-src="./assets/video/${p.video}"></video>`;
   }
-  if (p.category === 'flagship') {
-    return `<div class="hud-readout">
-      <div class="hud-status"><span class="blip"></span>SIGNAL LOCKED</div>
-      <div class="hud-plat">${p.plat}</div>
-    </div>`;
+  if (p.youtube) {
+    return `<img class="youtube-poster" src="https://i.ytimg.com/vi/${p.youtube}/hqdefault.jpg" alt="${p.title} video preview" loading="lazy"><span class="youtube-play" aria-hidden="true">▶ WATCH VIDEO</span>`;
+  }
+  if (['clash', 'laserhawk', 'ibaloot'].includes(p.id)) {
+    return projectArtwork(p);
   }
   return `<div style="font-family:var(--mono);font-size:12px;color:var(--text-dim);text-align:center;padding:0 16px;letter-spacing:.06em;">
     ${p.plat.toUpperCase()}
   </div>`;
 }
 
+function projectArtwork(p, failed = false) {
+  return `<span class="project-art art-${p.id}"><span class="signal-status"><span class="signal-dot"></span>SIGNAL NOT FOUND</span><strong>${p.title}</strong><small>${failed ? 'PREVIEW COULD NOT LOAD' : 'LOCAL PREVIEW UNAVAILABLE'} // ${p.tags[0].toUpperCase()}</small></span>`;
+}
+
+function handlePreviewFailure(video, p) {
+  const fallback = () => {
+    if (!video.isConnected) return;
+    video.parentElement.classList.remove('video-ready');
+    video.outerHTML = projectArtwork(p, true);
+  };
+  video.addEventListener('error', fallback, { once: true });
+  video.querySelector('source')?.addEventListener('error', fallback, { once: true });
+  video.addEventListener('loadeddata', () => video.parentElement?.classList.add('video-ready'), { once: true });
+}
+
 function cardHTML(p) {
   return `
-    <div class="card" data-id="${p.id}" data-category="${p.category}">
-      <div class="card-media">
+    <button type="button" class="card" data-id="${p.id}" data-category="${p.category}" aria-label="View ${p.title} project details">
+      <span class="card-media">
         ${mediaHTML(p)}
-        <span class="bracket b-tl"></span><span class="bracket b-tr"></span>
-        <span class="bracket b-bl"></span><span class="bracket b-br"></span>
-      </div>
-      <div class="card-body">
-        <h4>${p.title}</h4>
-        <div class="card-tags">${p.tags.map(t => `<span>${t}</span>`).join('')}</div>
-      </div>
-    </div>`;
+        <span class="bracket b-tl" aria-hidden="true"></span><span class="bracket b-tr" aria-hidden="true"></span>
+        <span class="bracket b-bl" aria-hidden="true"></span><span class="bracket b-br" aria-hidden="true"></span>
+        <span class="card-scan" aria-hidden="true"></span>
+        ${p.video ? '<span class="video-signal" aria-hidden="true">● SIGNAL LOCKED</span>' : ''}
+        <span class="card-arrow" aria-hidden="true">↗</span>
+      </span>
+      <span class="card-body" style="display:block">
+        <span class="card-title">${p.title}</span>
+        <span class="card-tags">${p.tags.map(t => `<span>${t}</span>`).join('')}</span>
+      </span>
+    </button>`;
 }
 
 grid.innerHTML = projects.map(cardHTML).join('');
@@ -194,20 +209,22 @@ applyFilter();
 const io = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     const video = entry.target;
-    const source = video.querySelector('source');
-    if (!source) return;
+    if (!video.isConnected) return;
     if (entry.isIntersecting) {
-      if (source.dataset.src && !video.src) {
-        source.src = source.dataset.src;
+      if (video.dataset.src && !video.getAttribute('src')) {
+        video.src = video.dataset.src;
         video.load();
       }
-      video.play().catch(() => {});
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) video.play().catch(() => {});
     } else {
       video.pause();
     }
   });
 }, { rootMargin: '200px' });
-document.querySelectorAll('.card-media video').forEach(v => io.observe(v));
+document.querySelectorAll('.card-media video').forEach(v => {
+  handlePreviewFailure(v, projects.find(p => p.id === v.closest('.card').dataset.id));
+  io.observe(v);
+});
 
 // ---------------------------------------------------------------
 // Modal — mission briefing
@@ -219,39 +236,54 @@ const modalTitle = document.getElementById('modalTitle');
 const modalDesc = document.getElementById('modalDesc');
 const modalTags = document.getElementById('modalTags');
 const modalLinks = document.getElementById('modalLinks');
-const CAT_LABEL = { flagship: 'Flagship Project', published: 'Published', prototype: 'Prototype', vr: 'VR / Arch-Viz' };
+const CAT_LABEL = Object.fromEntries(CATS.map(c => [c.key, c.label]));
+let returnFocus = null;
 
 function openModal(p) {
+  returnFocus = document.activeElement;
   modalCat.textContent = `// ${CAT_LABEL[p.category]}`;
   modalTitle.textContent = p.title;
   modalDesc.textContent = p.desc;
+  document.getElementById('modalTech').innerHTML = `<div><dt>Engine</dt><dd>${p.tags[0] === 'Unreal' ? 'Unreal Engine' : p.tags[0]}</dd></div>${p.tools?.length ? `<div><dt>Tools & technology</dt><dd>${p.tools.join(' · ')}</dd></div>` : ''}`;
   modalTags.innerHTML = p.tags.map(t => `<span>${t}</span>`).join('');
-  modalLinks.innerHTML = p.links.map(l => `<a class="btn btn-ghost" href="${l.url}" target="_blank" rel="noopener">${l.label} ↗</a>`).join('');
+  const links = [...p.links];
+  if (p.youtube && !links.some(l => l.url.includes(p.youtube))) {
+    links.push({ label: 'Watch on YouTube', url: `https://www.youtube.com/watch?v=${p.youtube}` });
+  }
+  modalLinks.innerHTML = links.map(l => `<a class="btn btn-ghost" href="${l.url}" target="_blank" rel="noopener">${l.label} ↗</a>`).join('');
+  const notes = [p.release, p.availability, p.videoCredit].filter(Boolean);
+  document.getElementById('modalAvailability').textContent = notes.join(' · ');
+  document.getElementById('modalAvailability').hidden = !notes.length;
 
-  document.getElementById('modal').classList.toggle('flagship', p.category === 'flagship');
-  modalMedia.classList.toggle('flagship-media', p.category === 'flagship');
+  document.getElementById('modal').classList.toggle('flagship', ['clash', 'laserhawk', 'ibaloot'].includes(p.id));
+  modalMedia.classList.toggle('flagship-media', ['clash', 'laserhawk', 'ibaloot'].includes(p.id));
 
   if (p.video) {
-    modalMedia.innerHTML = `<video muted loop playsinline autoplay><source src="./assets/video/${p.video}" type="video/mp4"></video>`;
+    modalMedia.innerHTML = `<video controls muted loop playsinline ${window.matchMedia('(prefers-reduced-motion: reduce)').matches ? '' : 'autoplay'}><source src="./assets/video/${p.video}" type="video/mp4"></video>`;
+    handlePreviewFailure(modalMedia.querySelector('video'), p);
   } else if (p.youtube) {
-    modalMedia.innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/${p.youtube}?autoplay=1&mute=1&rel=0" title="${p.title} trailer" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="display:block;"></iframe>`;
-  } else if (p.category === 'flagship') {
-    modalMedia.innerHTML = `<div class="hud-readout">
-      <div class="hud-status"><span class="blip"></span>SIGNAL LOCKED</div>
-      <div class="hud-plat">${p.plat}</div>
-    </div>`;
+    modalMedia.innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/${p.youtube}?rel=0" title="${p.title} video" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen style="display:block;border:0;"></iframe>`;
+  } else if (['clash', 'laserhawk', 'ibaloot'].includes(p.id)) {
+    modalMedia.innerHTML = projectArtwork(p);
   } else {
     modalMedia.innerHTML = `<div style="font-family:var(--mono);font-size:13px;color:var(--text-dim);letter-spacing:.06em;">${p.plat.toUpperCase()}</div>`;
   }
 
   overlay.classList.add('open');
   document.body.style.overflow = 'hidden';
+  document.querySelector('.hud').inert = true;
+  document.querySelectorAll('main > :not(.modal-overlay)').forEach(el => el.inert = true);
+  document.getElementById('modalClose').focus();
 }
 
 function closeModal() {
+  if (!overlay.classList.contains('open')) return;
   overlay.classList.remove('open');
   document.body.style.overflow = '';
   modalMedia.innerHTML = '';
+  document.querySelector('.hud').inert = false;
+  document.querySelectorAll('main > :not(.modal-overlay)').forEach(el => el.inert = false);
+  returnFocus?.focus();
 }
 
 grid.addEventListener('click', (e) => {
@@ -263,19 +295,35 @@ grid.addEventListener('click', (e) => {
 
 document.getElementById('modalClose').addEventListener('click', closeModal);
 overlay.addEventListener('click', (e) => { if (e.target === overlay) closeModal(); });
-document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closeModal();
+    if (mobileMenu.classList.contains('open')) {
+      mobileMenu.classList.remove('open');
+      menuBtn.textContent = 'MENU';
+      menuBtn.setAttribute('aria-expanded', 'false');
+      menuBtn.focus();
+    }
+  }
+  if (e.key === 'Tab' && overlay.classList.contains('open')) {
+    const focusable = [...overlay.querySelectorAll('button, a[href], video[controls], iframe')];
+    const first = focusable[0], last = focusable[focusable.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  }
+});
 
 // ---------------------------------------------------------------
-// HUD live clock (Cairo time)
+// Expandable career history
 // ---------------------------------------------------------------
-const statusEl = document.querySelector('.hud-status');
-if (statusEl) {
-  const clock = document.createElement('span');
-  statusEl.appendChild(clock);
-  function tick() {
-    const now = new Date();
-    clock.textContent = now.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
-  }
-  tick();
-  setInterval(tick, 30000);
-}
+document.querySelectorAll('.log-entry').forEach((entry, index) => {
+  if (index === 0) return;
+  const content = entry.querySelector('ul, .early-block');
+  if (!content) return;
+  const details = document.createElement('details');
+  details.className = 'experience-details';
+  const summary = document.createElement('summary');
+  summary.textContent = index === 6 ? 'Explore earlier roles' : 'Role & contributions';
+  content.before(details);
+  details.append(summary, content);
+});
