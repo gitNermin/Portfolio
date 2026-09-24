@@ -1,842 +1,374 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nermin's Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nermin Shawkat — Senior Game Developer</title>
+<meta name="description" content="Nermin Shawkat — Senior Game Developer specializing in Unity & Unreal gameplay systems, performance optimization, and live-ops. 10+ years shipping mobile, PC, VR, and WebGL titles.">
+<link rel="icon" type="image/png" href="./assets/img/favicon.png">
 
-    <link rel="icon" type="image/x-icon" href="./assets/images/favicon.png">
-
-
-
-    <!-- Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
-    <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="./assets/css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="./assets/css/animate.min.css">
-    <link rel="stylesheet" href="./assets/css/smooth-scrollbar.css">
-    <link rel="stylesheet" href="./assets/css/lightbox.min.css">
-
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./assets/css/responsive.css">
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./assets/css/style.css">
 </head>
-<body class="home1-page">
+<body>
+<div class="bg-glow"></div>
+<div class="bg-lines"></div>
+<div class="bg-grain"></div>
+<div class="vignette"></div>
 
-    <video class="body-overlay" muted autoplay loop>
-        <source src="./assets/images/video1.mp4" type="video/mp4">
-    </video>
-
-    <!-- Preloader -->
-    <div class="page-loader">
-        <div class="bounceball"></div>
+<!-- HUD BAR -->
+<header class="hud">
+  <div class="hud-inner">
+    <a href="#home" class="hud-id"><span class="dot"></span> NERMIN_SHAWKAT.sav</a>
+    <nav class="hud-nav">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#credentials">Credentials</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="hud-status">
+      <span class="rec">● LIVE</span>
+      <span>CAIRO, EG</span>
     </div>
+    <button class="hud-menu-btn" id="menuBtn">MENU</button>
+  </div>
+  <div class="hud-mobile-menu" id="mobileMenu">
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#credentials">Credentials</a>
+    <a href="#contact">Contact</a>
+  </div>
+</header>
 
-    <span class="icon-menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-    </span>
+<main id="home">
 
-    <!-- Side Menu Bar -->
-    <div class="responsive-sidebar-menu">
-        <div class="overlay"></div>
-        <div class="sidebar-menu-inner">
-            <div class="menu-wrap">
-                <p>Menu</p>
-                <ul class="menu scroll-nav-responsive d-flex">
-                    <li>
-                        <a class="scroll-to" href="#home">
-                            <i class="las la-home"></i> <span>Home</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="scroll-to" href="#about">
-                            <i class="lar la-user"></i> <span>About</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="scroll-to" href="#resume">
-                            <i class="las la-briefcase"></i> <span>Resume</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="scroll-to" href="#skills">
-                            <i class="las la-shapes"></i> <span>Skills</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="scroll-to" href="#portfolio">
-                            <i class="las la-grip-vertical"></i> <span>Portfolios</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-frame">
+        <div class="scanlines"></div>
+        <div class="hero-glow"></div>
+        <span class="hero-kicker mono">LVL_00 // PLAYER PROFILE — SENIOR GAME DEVELOPER</span>
+        <h1>Nermin <span class="last">Shawkat</span></h1>
+        <p class="hero-role">
+          <strong>10+ years</strong> shipping Unity &amp; Unreal Engine titles across mobile, PC, VR, and WebGL —
+          including <strong>Clash of Beasts</strong> and <strong>Captain Laserhawk: The Game</strong> at Ubisoft Abu Dhabi.
+          Focused on gameplay &amp; meta-systems architecture, performance optimization, and live-ops.
+        </p>
 
-
-            <div class="sidebar-social">
-                <p>Social</p>
-                <ul class="social-links d-flex align-items-center">
-
-                    <li>
-                        <a href="https://www.linkedin.com/in/nerminshawkat/"><i class="lab la-linkedin"></i></a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/gitNermin"><i class="lab la-github"></i></a>
-                    </li>
-                    <li>
-                        <a href="https://drive.google.com/uc?export=download&id=1jmcG9jDswQLfieSsmREoWnFr9WCJauIL"><i class="las la-download"></i></a>
-                    </li>
-                </ul>
-            </div>
+        <div class="ticker">
+          <span><b>10+</b> YRS SHIPPING</span>
+          <span>UNITY <b>CERTIFIED PRO</b></span>
+          <span>MOBILE · PC · VR · WEBGL</span>
+          <span>ECS / LIVE-OPS / PERF</span>
+          <span>C# · C++</span>
         </div>
+
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary">View Shipped Work →</a>
+          <a href="./assets/Nermin_Shawkat_Resume.pdf" download class="btn btn-ghost">↓ Download Résumé</a>
+          <a href="#contact" class="btn btn-ghost">Contact</a>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <ul class="menu scroll-nav d-flex">
-        <li>
-            <a class="scroll-to" href="#home">
-                <span>Home</span> <i class="las la-home"></i>
-            </a>
-        </li>
-        <li>
-            <a class="scroll-to" href="#about">
-                <span>About</span> <i class="lar la-user"></i>
-            </a>
-        </li>
-        <li>
-            <a class="scroll-to" href="#resume">
-                <span>Resume</span> <i class="las la-briefcase"></i>
-            </a>
-        </li>
-        <li>
-            <a class="scroll-to" href="#skills">
-                <span>Skills</span> <i class="las la-shapes"></i>
-            </a>
-        </li>
-        <li>
-            <a class="scroll-to" href="#portfolio">
-                <span>Portfolios</span> <i class="las la-grip-vertical"></i>
-            </a>
-        </li>
-    </ul>
-
-    <div class="left-sidebar">
-        <div class="sidebar-header d-flex align-items-center justify-content-between">
-            <img src="./assets/images/logo.png" alt="Logo">
-            <span class="designation">Game Programmer</span>
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="wrap">
+      <div class="eyebrow"><span class="tag">LVL_01</span> CHARACTER SHEET</div>
+      <div class="about-grid">
+        <div>
+          <div class="photo-frame">
+            <img src="./assets/img/me.jpg" alt="Portrait of Nermin Shawkat">
+          </div>
+          <div class="photo-caption">
+            <span>IMG_NS.JPG</span>
+            <span>CAIRO, EG</span>
+          </div>
         </div>
-        <img class="me" src="./assets/images/me.jpg" alt="Me">
-        <h2 class="email">shawkat.nermin@gmail.com</h2>
-        <ul class="social-profile d-flex align-items-center flex-wrap justify-content-center">
-            <li>
-                <a href="https://www.linkedin.com/in/nerminshawkat/"><i class="lab la-linkedin"></i></a>
-            </li>
-            <li>
-                <a href="https://github.com/gitNermin"><i class="lab la-github"></i></a>
-            </li>
-            <li>
-                <a href="https://drive.google.com/uc?export=download&id=1jmcG9jDswQLfieSsmREoWnFr9WCJauIL"><i class="las la-download"></i></a>
-            </li>
-        </ul>
-        <a href="mailto:shawkat.nermin@gmail.com" class="theme-btn">
-            <i class="las la-envelope"></i> Contact Me!
-        </a>
+        <div class="about-body">
+          <p>
+            Senior Game Developer with <strong>10+ years</strong> shipping Unity and Unreal Engine titles across
+            mobile, PC, VR, and WebGL, including <strong>Clash of Beasts</strong> and <strong>Captain Laserhawk: The Game</strong>
+            at Ubisoft Abu Dhabi. Specializes in gameplay and meta-systems architecture, performance optimization,
+            and live-operations support for mobile and PC titles.
+          </p>
+          <p>
+            Proven track record integrating third-party SDKs, stabilizing live builds, and delivering
+            cross-platform tools in close collaboration with design, art, and backend teams.
+          </p>
+          <p>
+            Currently developing a math course for ITI's MaharaTech e-learning platform, and actively seeking
+            a new senior role to bring this expertise to a growing team.
+          </p>
+          <div class="about-meta">
+            <div><span>Base</span><span>Cairo, Egypt</span></div>
+            <div><span>Engines</span><span>Unity · Unreal</span></div>
+            <div><span>Languages</span><span>C# · C++</span></div>
+            <div><span>Status</span><span>Open to roles</span></div>
+          </div>
+        </div>
+      </div>
     </div>
-    <!-- Main Section -->
-    <main class="drake-main">
-        <div id="smooth-wrapper">
-            <div id="smooth-content">
+  </section>
 
-                <div class="left-sidebar">
-                    <div class="sidebar-header d-flex align-items-center justify-content-between">
-                        <img src="./assets/images/logo.png" alt="Logo">
-                        <span class="designation">Game Programmer</span>
-                    </div>
-                    <img class="me" src="./assets/images/me.jpg" alt="Me">
-                    <h2 class="email">shawkat.nermin@gmail.com</h2>
-                    <ul class="social-profile d-flex align-items-center flex-wrap justify-content-center">
-                        <li>
-                            <a href="https://www.linkedin.com/in/nerminshawkat/"><i class="lab la-linkedin"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/gitNermin"><i class="lab la-github"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://drive.google.com/uc?export=download&id=1jmcG9jDswQLfieSsmREoWnFr9WCJauIL"><i class="las la-download"></i></a>
-                        </li>
-                    </ul>
-                    <a href="#" class="theme-btn">
-                        <i class="las la-envelope"></i> Contact Me!
-                    </a>
-                </div>
-
-                <!-- Hero Section -->
-                <section class="hero-section page-section scroll-to-page" id="home">
-
-                    <div class="custom-container">
-                        <div class="hero-content content-width">
-                            <div class="section-header">
-                                <h4 class="subtitle scroll-animation" data-animation="fade_from_bottom">
-                                    <i class="las la-home"></i> Introduce
-                                </h4>
-                                <h1 class="scroll-animation" data-animation="fade_from_bottom">Hi, this is <span>Nermin</span>, a Game Programmer</h1>
-                            </div>
-                            <p class="scroll-animation" data-animation="fade_from_bottom">I live to create games, and my joy is seeing players enjoy what I've crafted.</p>
-                            <a href="#portfolio"
-                               class="go-to-project-btn scroll-to scroll-animation"
-                               data-animation="rotate_up">
-                                <img src="./assets/images/round-text.png" alt="Rounded Text">
-                                <i class="las la-arrow-down"></i>
-                            </a>
-
-                        </div>
-                    </div>
-                </section>
-
-                <!-- About Section -->
-                <section class="about-area page-section scroll-to-page" id="about">
-                    <div class="custom-container">
-                        <div class="about-content content-width">
-                            <div class="section-header">
-                                <h4 class="subtitle scroll-animation" data-animation="fade_from_bottom">
-                                    <i class="lar la-user"></i> About
-                                </h4>
-                            </div>
-                            <p class="scroll-animation" data-animation="fade_from_bottom">
-                                I'm a passionate game developer with <b>9 years</b> of expertise in Unity.
-                                I've created games for <b>
-                                    mobile, VR, and the Web
-                                </b>. I've also delved into <b>
-                                    Unreal Engine
-                                </b> Blueprint for <b>
-                                    VR
-                                </b> projects.
-                                My appetite for innovation drives me to explore cutting-edge technologies and tools,
-                                ensuring every project is a captivating journey into the world of gaming.
-                            </p>
-                            <p class="scroll-animation" data-animation="fade_from_bottom"></p>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Resume Section -->
-                <section class="resume-area page-section scroll-to-page" id="resume">
-                    <div class="custom-container">
-                        <div class="resume-content content-width">
-                            <div class="section-header">
-                                <h4 class="subtitle scroll-animation" data-animation="fade_from_bottom">
-                                    <i class="las la-briefcase"></i> Resume
-                                </h4>
-                                <h1 class="scroll-animation" data-animation="fade_from_bottom">Education & <span>Experience</span></h1>
-                            </div>
-                            <div class="resume-timeline">
-                                <div class="item scroll-animation" data-animation="fade_from_right">
-                                    <span class="date">05/2024 - Present</span>
-                                    <h2>Gameplay Programmer</h2>
-                                    <p>Ubisoft Abu Dhabi</p>
-                                </div>
-                                <div class="item scroll-animation" data-animation="fade_from_right">
-                                    <span class="date">11/2023 - 04/2024</span>
-                                    <h2>Senior Game Programmer</h2>
-                                    <p>MAU Games</p>
-                                </div>
-                                <div class="item scroll-animation" data-animation="fade_from_right">
-                                    <span class="date">07/2022 - 10/2023</span>
-                                    <h2>Lead Programmer</h2>
-                                    <p>Meelfoy Games</p>
-                                </div>
-                                <div class="item scroll-animation" data-animation="fade_from_right">
-                                    <span class="date">07/2021 - 06/2022</span>
-                                    <h2>Lead Programmer and Co-founder</h2>
-                                    <p>Kingtut Games</p>
-                                </div>
-                                <div class="item scroll-animation" data-animation="fade_from_right">
-                                    <span class="date">12/2019 - 06/2021</span>
-                                    <h2>Game Programming Track Supervisor</h2>
-                                    <p>Information Technology Institute (ITI)</p>
-                                </div>
-
-                                <div class="item scroll-animation" data-animation="fade_from_right">
-                                    <span class="date">12/2018 - 11/2019</span>
-                                    <h2>Senior Game Programmer</h2>
-                                    <p>CVS3 Virtual Reality Lab</p>
-                                </div>
-                                <div class="item scroll-animation" data-animation="fade_from_right">
-                                    <span class="date">07/2017 - 07/2018</span>
-                                    <h2>Game Programmer</h2>
-                                    <p>e-motion</p>
-                                </div>
-
-                                <div class="item scroll-animation" data-animation="fade_from_right">
-                                    <span class="date">10/2014 - 06/2015</span>
-                                    <h2>Game Development Diploma</h2>
-                                    <p>Information Technology Institute (ITI)</p>
-                                </div>
-
-                                <div class="item scroll-animation" data-animation="fade_from_right">
-                                    <span class="date">2008 - 2013</span>
-                                    <h2>Bachelor of computer and systems engineering</h2>
-                                    <p>Ain Shams University</p>
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Skills Section -->
-                <section class="skills-area page-section scroll-to-page" id="skills">
-                    <div class="custom-container">
-                        <div class="skills-content content-width">
-                            <div class="section-header">
-                                <h4 class="subtitle scroll-animation" data-animation="fade_from_bottom">
-                                    <i class="las la-shapes"></i> my skills
-                                </h4>
-                                <h1 class="scroll-animation" data-animation="fade_from_bottom">My <span>Advantages</span></h1>
-                            </div>
-
-                            <div class="row skills text-center">
-                                <div class="col-md-3 scroll-animation" data-animation="fade_from_left">
-                                    <div class="skill">
-                                        <div class="skill-inner">
-                                            <img src="./assets/images/unity.png" alt="Unity">
-                                            <h1 class="percent">Unity</h1>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 scroll-animation" data-animation="fade_from_bottom">
-                                    <div class="skill">
-                                        <div class="skill-inner">
-                                            <img src="./assets/images/cs.png" alt="C#">
-                                            <h1 class="percent">C#</h1>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 scroll-animation" data-animation="fade_from_top">
-                                    <div class="skill">
-                                        <div class="skill-inner">
-                                            <img src="./assets/images/unreal.png" alt="Unreal">
-                                            <h1 class="percent">Unreal</h1>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 scroll-animation" data-animation="fade_from_right">
-                                    <div class="skill">
-                                        <div class="skill-inner">
-                                            <img src="./assets/images/cpp.png" alt="C++">
-                                            <h1 class="percent">C++</h1>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Portfolio Section -->
-                <section class="portfolio-area page-section scroll-to-page" id="portfolio">
-                    <div class="custom-container">
-                        <div class="portfolio-content content-width">
-
-                            <h4 class="subtitle scroll-animation" data-animation="fade_from_bottom">
-                                <i class="las la-grip-vertical"></i> portfolio
-                            </h4>
-
-                            <div class="section-header">
-                                <h1 class="scroll-animation" data-animation="fade_from_bottom"> <i class="las la-gamepad"></i> Featured <span>Games</span></h1>
-                            </div>
-
-                            
-
-                            <div class="row portfolio-items">
-                                <div class="col-md-12 scroll-animation" data-animation="fade_from_bottom">
-                                    <div class="portfolio-item portfolio-half">
-                                        <div class="portfolio-item-inner">
-                                            <video muted autoplay loop>
-                                                <source src="./assets/images/dogs-den.mp4" type="video/mp4">
-                                            </video>
-
-                                            <ul class="portfolio-categories">
-                                                <li>
-                                                    <p>Unity</p>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <h2>
-                                            Dogs Den <a href="https://play.google.com/store/apps/details?id=dogsden.idle.game.pet.rescue.shelter.tycoon">
-                                                <i class="lab la-android"></i>
-                                            </a>
-                                            <a href="https://apps.apple.com/gb/app/dogs-den-pet-rescue-shelter/id1661069257">
-                                                <i class="lab la-app-store"></i>
-                                            </a>
-                                        </h2>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-12 scroll-animation" data-animation="fade_from_bottom">
-                                    <div class="portfolio-item portfolio-half">
-                                        <div class="portfolio-item-inner">
-                                            <video muted autoplay loop>
-                                                <source src="./assets/images/rocky-towers.mp4" type="video/mp4">
-                                            </video>
-
-                                            <ul class="portfolio-categories">
-                                                <li>
-                                                    <p>Unity</p>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <h2>
-                                            Rocky Towers <a href="https://play.google.com/store/apps/details?id=com.meelfoy.rockytowers">
-                                                <i class="lab la-android"></i>
-                                            </a>
-                                            <a href="https://apps.apple.com/gb/app/rocky-towers-puzzle-defense/id1594552128">
-                                                <i class="lab la-app-store"></i>
-                                            </a>
-                                        </h2>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6 scroll-animation" data-animation="fade_from_bottom">
-                                    <div class="portfolio-item portfolio-half">
-                                        <div class="portfolio-item-inner-tall">
-                                            <video muted autoplay loop>
-                                                <source src="./assets/images/iamai.mp4" type="video/mp4">
-                                            </video>
-                                            <ul class="portfolio-categories">
-                                                <li>
-                                                    <p>Unity</p>
-                                                </li>
-                                                <li>
-                                                    <p>1 <i class="las la-user"></i></p>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <h2>
-                                            I AM AI: Global Domination Sim<br> <a href="https://play.google.com/store/apps/details?id=com.meelfoygames.iamai.ai.chat.strategy.simulator">
-                                                <i class="lab la-android"></i>
-                                            </a>
-                                        </h2>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6 scroll-animation" data-animation="fade_from_right">
-                                    <div class="portfolio-item portfolio-half">
-                                        <div class="portfolio-item-inner-tall">
-                                            <video muted autoplay loop>
-                                                <source src="./assets/images/lingo.mp4" type="video/mp4">
-                                            </video>
-
-                                            <ul class="portfolio-categories">
-                                                <li>
-                                                    <p>Unity</p>
-                                                </li>
-                                                <li>
-                                                    <p>1 <i class="las la-user"></i></p>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <h2>
-                                            Lingogotchi: My Learning Slime <br><a href="https://play.google.com/store/apps/details?id=com.meelfoy.lingogotchi.virtual.pocket.learning.pet.friend">
-                                                <i class="lab la-android"></i>
-                                            </a>
-                                            <a href="https://apps.apple.com/gb/app/lingogotchi-my-learning-slime/id6443449278">
-                                                <i class="lab la-app-store"></i>
-                                            </a>
-                                        </h2>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6 scroll-animation" data-animation="fade_from_bottom">
-                                    <div class="portfolio-item portfolio-half">
-                                        <div class="portfolio-item-inner">
-                                            <video muted autoplay loop>
-                                                <source src="./assets/images/mushroom-farm.mp4" type="video/mp4">
-                                            </video>
-                                            <ul class="portfolio-categories">
-                                                <li>
-                                                    <p>Unity</p>
-                                                </li>
-                                                <li>
-                                                    <p>3 <i class="las la-user"></i></p>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <h2>Mushroom Farm</h2>
-                                    </div>
-                                </div>
-
-
-
-                                <div class="col-md-6 scroll-animation" data-animation="fade_from_left">
-                                    <div class="portfolio-item portfolio-half">
-                                        <div class="portfolio-item-inner">
-                                            <video muted autoplay loop>
-                                                <source src="./assets/images/grass-seek.mp4" type="video/mp4">
-                                            </video>
-
-                                            <ul class="portfolio-categories">
-                                                <li>
-                                                    <p>Unity</p>
-                                                </li>
-                                                <li>
-                                                    <p>Compute Shaders</p>
-                                                </li>
-                                                <li>
-                                                    <p>3 <i class="las la-user"></i></p>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <h2>Grass Seek</h2>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6 scroll-animation" data-animation="fade_from_right">
-                                    <div class="portfolio-item portfolio-half">
-                                        <div class="portfolio-item-inner-tall">
-                                            <video muted autoplay loop>
-                                                <source src="./assets/images/pacball.mp4" type="video/mp4">
-                                            </video>
-
-                                            <ul class="portfolio-categories">
-                                                <li>
-                                                    <p>Unity</p>
-                                                </li>
-                                                <li>
-                                                    <p>3 <i class="las la-user"></i></p>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <h2>Pacball Rush</h2>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6 scroll-animation" data-animation="fade_from_bottom">
-                                    <div class="portfolio-item portfolio-half">
-                                        <div class="portfolio-item-inner-tall">
-                                            <video muted autoplay loop>
-                                                <source src="./assets/images/masterchef-runner.mp4" type="video/mp4">
-                                            </video>
-                                            <ul class="portfolio-categories">
-                                                <li>
-                                                    <p>Unity</p>
-                                                </li>
-                                                <li>
-                                                    <p>3 <i class="las la-user"></i></p>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <h2>Masterchef Runner</h2>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6 scroll-animation" data-animation="fade_from_right">
-                                    <div class="portfolio-item portfolio-half">
-                                        <div class="portfolio-item-inner-tall">
-                                            <video muted autoplay loop>
-                                                <source src="./assets/images/camper-van.mp4" type="video/mp4">
-                                            </video>
-
-                                            <ul class="portfolio-categories">
-                                                <li>
-                                                    <p>Unity</p>
-                                                </li>
-                                                <li>
-                                                    <p>3 <i class="las la-user"></i></p>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <h2>Camper Van</h2>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6 scroll-animation" data-animation="fade_from_bottom">
-                                    <div class="portfolio-item portfolio-half">
-                                        <div class="portfolio-item-inner-tall">
-                                            <video muted autoplay loop>
-                                                <source src="./assets/images/war-masters.mp4" type="video/mp4">
-                                            </video>
-                                            <ul class="portfolio-categories">
-                                                <li>
-                                                    <p>Unity</p>
-                                                </li>
-                                                <li>
-                                                    <p>3 <i class="las la-user"></i></p>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <h2>War Masters</h2>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-12 scroll-animation" data-animation="fade_from_bottom">
-                                    <div class="portfolio-item portfolio-half">
-                                        <div class="portfolio-item-inner">
-                                            <video muted autoplay loop>
-                                                <source src="./assets/images/tractor-rush.mp4" type="video/mp4">
-                                            </video>
-
-                                            <ul class="portfolio-categories">
-                                                <li>
-                                                    <p>Unity</p>
-                                                </li>
-                                                <li>
-                                                    <p>2 <i class="las la-user"></i></p>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <h2>Tractor Rush</h2>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6 scroll-animation" data-animation="fade_from_right">
-                                    <div class="portfolio-item portfolio-half">
-                                        <div class="portfolio-item-inner-tall">
-                                            <video muted autoplay loop>
-                                                <source src="./assets/images/word-ivy.mp4" type="video/mp4">
-                                            </video>
-
-                                            <ul class="portfolio-categories">
-                                                <li>
-                                                    <p>Unity</p>
-                                                </li>
-                                                <li>
-                                                    <p>1 <i class="las la-user"></i></p>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <h2>Word Ivy</h2>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6 scroll-animation" data-animation="fade_from_bottom">
-                                    <div class="portfolio-item portfolio-half">
-                                        <div class="portfolio-item-inner-tall">
-                                            <video muted autoplay loop>
-                                                <source src="./assets/images/ransom-note.mp4" type="video/mp4">
-                                            </video>
-                                            <ul class="portfolio-categories">
-                                                <li>
-                                                    <p>Unity</p>
-                                                </li>
-                                                <li>
-                                                    <p>1 <i class="las la-user"></i></p>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <h2>Ransom Note</h2>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6 scroll-animation" data-animation="fade_from_right">
-                                    <div class="portfolio-item portfolio-half">
-                                        <div class="portfolio-item-inner-tall">
-                                            <video muted autoplay loop>
-                                                <source src="./assets/images/school-principal.mp4" type="video/mp4">
-                                            </video>
-
-                                            <ul class="portfolio-categories">
-                                                <li>
-                                                    <p>Unity</p>
-                                                </li>
-                                                <li>
-                                                    <p>3 <i class="las la-user"></i></p>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <h2>School Principal</h2>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6 scroll-animation" data-animation="fade_from_bottom">
-                                    <div class="portfolio-item portfolio-half">
-                                        <div class="portfolio-item-inner-tall">
-                                            <video muted autoplay loop>
-                                                <source src="./assets/images/prevent-disaster.mp4" type="video/mp4">
-                                            </video>
-                                            <ul class="portfolio-categories">
-                                                <li>
-                                                    <p>Unity</p>
-                                                </li>
-                                                <li>
-                                                    <p>3 <i class="las la-user"></i></p>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <h2>Prevent Disaster</h2>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6 scroll-animation" data-animation="fade_from_bottom">
-                                    <div class="portfolio-item portfolio-half">
-                                        <div class="portfolio-item-inner-tall">
-                                            <video muted autoplay loop>
-                                                <source src="./assets/images/avalanche.mp4" type="video/mp4">
-                                            </video>
-                                            <ul class="portfolio-categories">
-                                                <li>
-                                                    <p>Unity</p>
-                                                </li>
-                                                <li>
-                                                    <p>1 <i class="las la-user"></i></p>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <h2>Avalanche</h2>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 scroll-animation" data-animation="fade_from_bottom">
-                                    <div class="portfolio-item portfolio-half">
-                                        <div class="portfolio-item-inner-tall">
-                                            <video muted autoplay loop>
-                                                <source src="./assets/images/spaceball-dunk.mp4" type="video/mp4">
-                                            </video>
-                                            <ul class="portfolio-categories">
-                                                <li>
-                                                    <p>Unity</p>
-                                                </li>
-                                                <li>
-                                                    <p>1 <i class="las la-user"></i></p>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <h2>Spaceball Dunk</h2>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-12 scroll-animation" data-animation="fade_from_bottom">
-                                    <div class="portfolio-item portfolio-half">
-                                        <div class="portfolio-item-inner">
-                                            <video muted autoplay loop>
-                                                <source src="./assets/images/bombaboo.mp4" type="video/mp4">
-                                            </video>
-
-                                            <ul class="portfolio-categories">
-                                                <li>
-                                                    <p>Unity</p>
-                                                </li>
-                                                <li>
-                                                    <p>3 <i class="las la-user"></i></p>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <h2>Bomba Boo</h2>
-                                    </div>
-
-                                </div>
-
-                                <div class="section-header">
-                                    <h1 class="scroll-animation" data-animation="fade_from_bottom"><i class="las la-vr-cardboard"></i> <span>VR</span> Projects</h1>
-                                </div>
-
-                                <div class="col-md-12 scroll-animation" data-animation="fade_from_bottom">
-                                    <div class="portfolio-item portfolio-half">
-                                        <div class="portfolio-item-inner">
-                                            <video muted autoplay loop>
-                                                <source src="./assets/images/vr-Demo.mp4" type="video/mp4">
-                                            </video>
-
-                                            <ul class="portfolio-categories">
-                                                <li>
-                                                    <p>Unreal</p>
-                                                </li>
-                                                <li>
-                                                    <p>2 <i class="las la-user"></i></p>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <h2>Architecture Visualization Demo</h2>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-12 scroll-animation" data-animation="fade_from_bottom">
-                                    <div class="portfolio-item portfolio-half">
-                                        <div class="portfolio-item-inner">
-                                            <video muted autoplay loop>
-                                                <source src="./assets/images/construction.mp4" type="video/mp4">
-                                            </video>
-
-                                            <ul class="portfolio-categories">
-                                                <li>
-                                                    <p>Unreal</p>
-                                                </li>
-                                                <li>
-                                                    <p>1 <i class="las la-user"></i></p>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <h2><a href="https://www.facebook.com/VEROadvancedsolutions/videos/571177753776582/">Construction</a></h2>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-12 scroll-animation" data-animation="fade_from_bottom">
-                                    <div class="portfolio-item portfolio-half">
-                                        <div class="portfolio-item-inner">
-                                            <video muted autoplay loop>
-                                                <source src="./assets/images/supermarket.mp4" type="video/mp4">
-                                            </video>
-
-                                            <ul class="portfolio-categories">
-                                                <li>
-                                                    <p>Unreal</p>
-                                                </li>
-                                                <li>
-                                                    <p>1 <i class="las la-user"></i></p>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <h2>Supermarket</h2>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-12 scroll-animation" data-animation="fade_from_bottom">
-                                    <div class="portfolio-item portfolio-half">
-                                        <div class="portfolio-item-inner">
-                                            <video muted autoplay loop>
-                                                <source src="./assets/images/museum.mp4" type="video/mp4">
-                                            </video>
-
-                                            <ul class="portfolio-categories">
-                                                <li>
-                                                    <p>Unreal</p>
-                                                </li>
-                                                <li>
-                                                    <p>1 <i class="las la-user"></i></p>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <h2>Museum Demo</h2>
-                                    </div>
-
-
-
-                                </div>
-
-                            </div>
-                        </div>
-                </section>
-
-            </div>
+  <!-- EXPERIENCE -->
+  <section class="section" id="experience">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow"><span class="tag">LVL_02</span> QUEST LOG</div>
+          <h2>Experience</h2>
         </div>
-    </main>
+        <div class="count mono">10 QUESTS COMPLETED · 2015 — 2025</div>
+      </div>
 
-    <script src="./assets/js/jquery.js"></script>
-    <script src="./assets/js/bootstrap.bundle.min.js"></script>
-    <script src="./assets/js/owl.carousel.js"></script>
-    <script src="./assets/js/gsap.min.js"></script>
-    <script src="./assets/js/ScrollTrigger.min.js"></script>
-    <script src="./assets/js/ScrollToPlugin.min.js"></script>
-    <script src="./assets/js/lightbox.min.js"></script>
+      <div class="log">
 
-    <script src="./assets/js/main.js"></script>
-    <script src="./assets/js/ajax-form.js"></script>
+        <div class="log-entry">
+          <span class="log-tag">2024.05 — 2025.11</span>
+          <h3>Gameplay Programmer</h3>
+          <div class="log-company">Ubisoft Abu Dhabi <span class="loc">· Abu Dhabi, UAE</span></div>
+          <ul>
+            <li>Designed and implemented core gameplay/meta systems for Captain Laserhawk: The Game, including event systems, input rebinding, and an ECS-based dynamic collider system.</li>
+            <li>Developed gameplay systems and live-service features in Unity for Clash of Beasts, integrating Levelplay Ads and Firebase Crashlytics for monetization and stability monitoring.</li>
+            <li>Owned build stability and deployment across live and in-development projects, resolving gameplay and performance issues to keep releases on schedule.</li>
+            <li>Built tools and features that streamlined designer workflows and improved iteration speed.</li>
+            <li>Partnered with design, art, and backend teams to integrate features smoothly across disciplines.</li>
+            <li>Recognized as Tinkerer of the Season for an in-house prototype; earned Unity Certified Professional certification during tenure.</li>
+          </ul>
+          <div class="log-badges"><span>ECS</span><span>Live-Ops</span><span>Unity</span><span>AAA Mobile/PC</span></div>
+        </div>
+
+        <div class="log-entry">
+          <span class="log-tag">2023.11 — 2024.04</span>
+          <h3>Senior Game Programmer</h3>
+          <div class="log-company">MAU Games (now Lobah) <span class="loc">· Remote</span></div>
+          <ul>
+            <li>Refactored the iBaloot (iOS/Android) codebase using Dependency Injection and the Zenject framework, improving maintainability and reducing technical debt.</li>
+            <li>Delivered new features and resolved bugs across the live product while maintaining stability for active players.</li>
+            <li>Partnered with the backend team to integrate front-end changes cleanly into the live release pipeline.</li>
+            <li>Owned ongoing maintenance of the live application, ensuring a consistent experience across updates.</li>
+          </ul>
+          <div class="log-badges"><span>Zenject</span><span>DI</span><span>Live Product</span></div>
+        </div>
+
+        <div class="log-entry">
+          <span class="log-tag">2022.07 — 2023.10</span>
+          <h3>Lead Programmer</h3>
+          <div class="log-company">Meelfoy Games <span class="loc">· Remote</span></div>
+          <ul>
+            <li>As the sole programmer on the team, owned the core game loop and resource-generation systems for Dogs Den (idle game) end-to-end, using UniRx.</li>
+            <li>Implemented Beamable SDK microservices and dynamic content to power server-side validation and live content updates.</li>
+            <li>Drove performance optimization and bug-fix ownership across multiple mobile titles.</li>
+            <li>Planned and delivered gameplay functionality in close collaboration with artists and designers.</li>
+          </ul>
+          <div class="log-badges"><span>UniRx</span><span>Beamable</span><span>Idle/Mobile</span></div>
+        </div>
+
+        <div class="log-entry">
+          <span class="log-tag">2021.07 — 2022.06</span>
+          <h3>Lead Programmer &amp; Co-Founder</h3>
+          <div class="log-company">Kingtut Games <span class="loc">· Remote</span></div>
+          <ul>
+            <li>As Lead Programmer overseeing a small engineering team, rapidly prototyped hyper-casual and casual game concepts, turning ideas into playable builds within days to validate player engagement and market fit — the fast-iteration, data-driven approach central to hybrid-casual publishing.</li>
+            <li>Integrated ad monetization and analytics SDKs to track player behavior and inform go/no-go decisions on which prototypes advanced to full development.</li>
+            <li>Co-led ideation and creative direction as a founding team member, directing a small team of two programmers and two artists to shape each prototype's core gameplay loop and hook to stand out in a competitive casual mobile market.</li>
+          </ul>
+          <div class="log-badges"><span>Hyper-Casual</span><span>Prototyping</span><span>Co-Founder</span></div>
+        </div>
+
+        <div class="log-entry">
+          <span class="log-tag">2019.12 — 2021.06</span>
+          <h3>Game Programming Track Supervisor</h3>
+          <div class="log-company">Information Technology Institute (ITI) <span class="loc">· Cairo, Egypt</span></div>
+          <ul>
+            <li>Instructed Unity, Unreal Engine, and game programming patterns; developed curriculum and coordinated instructors.</li>
+            <li>Mentored students' graduation projects, reinforcing technical leadership alongside production experience.</li>
+            <li>Continue to return annually as a guest instructor for a 3-day game programming course.</li>
+          </ul>
+          <div class="log-badges"><span>Teaching</span><span>Curriculum</span><span>Mentorship</span></div>
+        </div>
+
+        <div class="log-entry">
+          <span class="log-tag">2018.12 — 2019.11</span>
+          <h3>Senior Game Programmer</h3>
+          <div class="log-company">CVS3 Virtual Reality Lab <span class="loc">· Cairo, Egypt</span></div>
+          <ul>
+            <li>Built cross-platform tools spanning web, mobile, PC, and VR.</li>
+            <li>Researched and optimized handling of large 3D models from photogrammetry and 3D scanning across target platforms.</li>
+          </ul>
+          <div class="log-badges"><span>VR</span><span>Photogrammetry</span><span>Cross-Platform</span></div>
+        </div>
+
+        <div class="log-entry early">
+          <span class="log-tag mono">2015 — 2018</span>
+          <h3>Early Career</h3>
+          <div class="log-company">Six roles across mobile &amp; VR studios</div>
+          <div class="early-block">
+            <div class="early-row">
+              <span class="when">2018.07–2018.11</span>
+              <span class="what"><strong>TANTUMSOFT FZCO</strong> — Senior Game Developer. Built and maintained features for the Flyy app, focusing on performance, stability, and bug resolution.</span>
+            </div>
+            <div class="early-row">
+              <span class="when">2017.07–2018.07</span>
+              <span class="what"><strong>e-motion</strong> — Game Developer. Built gameplay features for Tractor Rush Go, Spaceball Dunk, and an architecture-visualization VR demo in Unity and Unreal.</span>
+            </div>
+            <div class="early-row">
+              <span class="when">2016.10–2017.06</span>
+              <span class="what"><strong>CVS3 / ASUGARDS VR Lab</strong> — Game Developer. Developed web, mobile, PC, and VR apps in Unity; built tooling for future projects (Project: PIP).</span>
+            </div>
+            <div class="early-row">
+              <span class="when">2016.07–2016.09</span>
+              <span class="what"><strong>Sort 6</strong> — Game Developer. Built a music-trivia game and data-entry tools using Parse and Amazon AWS.</span>
+            </div>
+            <div class="early-row">
+              <span class="when">2016.03–2016.06</span>
+              <span class="what"><strong>Pentavalue</strong> — Game Developer. Maintained and extended mobile titles (Crazy Eggs, Bastet, Collect Food, and others).</span>
+            </div>
+            <div class="early-row">
+              <span class="when">2015.08–2016.01</span>
+              <span class="what"><strong>Smartapps</strong> — Game Developer. Contributed to mobile game development early in career.</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section" id="skills">
+    <div class="wrap">
+      <div class="eyebrow"><span class="tag">LVL_03</span> INVENTORY</div>
+      <h2 style="margin-bottom:40px;">Tech Stack</h2>
+      <div class="skills-grid">
+        <div class="skill-panel">
+          <h4>Engines</h4>
+          <div class="chips"><span>Unity</span><span>Unreal Engine</span></div>
+        </div>
+        <div class="skill-panel">
+          <h4>Languages</h4>
+          <div class="chips"><span>C#</span><span>C++</span></div>
+        </div>
+        <div class="skill-panel">
+          <h4>Platforms</h4>
+          <div class="chips"><span>iOS</span><span>Android</span><span>PC</span><span>Oculus</span><span>HTC Vive</span><span>WebGL</span></div>
+        </div>
+        <div class="skill-panel">
+          <h4>Gameplay &amp; Systems</h4>
+          <div class="chips"><span>Systems Architecture</span><span>Performance Optimization</span><span>Live Operations</span><span>ECS</span></div>
+        </div>
+        <div class="skill-panel">
+          <h4>Tools &amp; SDKs</h4>
+          <div class="chips"><span>Git</span><span>Perforce</span><span>Levelplay Ads</span><span>Firebase Crashlytics</span><span>Beamable SDK</span><span>UniRx</span><span>Zenject</span></div>
+        </div>
+        <div class="skill-panel">
+          <h4>Collaboration</h4>
+          <div class="chips"><span>Design</span><span>Art</span><span>Backend</span><span>Cross-Functional Teams</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section" id="projects">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow"><span class="tag">LVL_04</span> LEVEL SELECT</div>
+          <h2>Projects</h2>
+        </div>
+        <div class="count mono" id="project-count">25+ TITLES</div>
+      </div>
+
+      <div class="tabs" id="tabs"></div>
+      <p class="mono" style="font-size:12px;color:var(--text-dim);margin:-24px 0 28px;">Tap a tile for the mission briefing ▸</p>
+
+      <div class="project-grid" id="grid-all"></div>
+    </div>
+  </section>
+
+  <!-- PROJECT MODAL -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="modal">
+      <button class="modal-close" id="modalClose">✕</button>
+      <div class="modal-media" id="modalMedia"></div>
+      <div class="modal-body">
+        <div class="modal-cat" id="modalCat"></div>
+        <h3 id="modalTitle"></h3>
+        <p id="modalDesc"></p>
+        <div class="modal-tags" id="modalTags"></div>
+        <div class="modal-links" id="modalLinks"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CREDENTIALS -->
+  <section class="section" id="credentials">
+    <div class="wrap">
+      <div class="eyebrow"><span class="tag">LVL_05</span> ACHIEVEMENTS</div>
+      <div class="cred-grid">
+        <div class="cred-panel">
+          <h4>Education</h4>
+          <div class="cred-item">
+            <div class="t">Bachelor of Computer and Systems Engineering</div>
+            <div class="s">Ain Shams University · Cairo, Egypt · 2008 – 2013</div>
+          </div>
+          <div class="cred-item">
+            <div class="t">Game Development Diploma</div>
+            <div class="s">Information Technology Institute (ITI) · Oct 2014 – Jun 2015</div>
+          </div>
+          <div class="cred-item">
+            <div class="t">Graduation Project — Bomba Boo</div>
+            <div class="s"><a href="https://youtu.be/vwlHprJoB84" target="_blank" rel="noopener">2D mobile runner game — watch ↗</a></div>
+          </div>
+        </div>
+        <div class="cred-panel">
+          <h4>Unlocked</h4>
+          <div class="cred-item">
+            <div class="t">🏆 Unity Certified Professional</div>
+            <div class="s">Achieved during employment at Ubisoft Abu Dhabi · 2025</div>
+          </div>
+          <div class="cred-item">
+            <div class="t">🏆 Tinkerer of the Season</div>
+            <div class="s">Ubisoft Abu Dhabi — recognized for an in-house prototype</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="eyebrow" style="justify-content:center"><span class="tag">LVL_06</span> NEW SESSION</div>
+      <h2>Let's build something<br>that ships.</h2>
+      <p>Open to senior gameplay programming and systems-architecture roles. Based in Cairo, working remote or on-site.</p>
+      <div class="contact-links">
+        <a class="btn btn-primary" href="mailto:shawkat.nermin@gmail.com">✉ shawkat.nermin@gmail.com</a>
+        <a class="btn btn-ghost" href="https://linkedin.com/in/nerminshawkat" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a class="btn btn-ghost" href="https://github.com/gitNermin" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap" style="display:flex;justify-content:space-between;width:100%;flex-wrap:wrap;gap:10px;">
+      <span>© 2026 NERMIN SHAWKAT</span>
+      <span>BUILD 2026.08 · CAIRO, EG</span>
+    </div>
+  </footer>
+
+</main>
+
+<script src="./assets/js/script.js"></script>
 </body>
 </html>
